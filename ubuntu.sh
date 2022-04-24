@@ -12,7 +12,7 @@ sudo apt install linux-tools-common
 # Node.js
 sudo apt install curl 
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-nvm lts
+nvm install --lts
 
 # kubectl/Kubectx
 # https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/

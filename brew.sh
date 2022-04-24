@@ -5,3 +5,6 @@ brew bundle --file ~/dotfiles/Brewfile
 
 # For https://github.com/junegunn/fzf.vim
 $(brew --prefix)/opt/fzf/install
+
+# For install node
+nvm install --lts

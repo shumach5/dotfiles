@@ -12,6 +12,7 @@ export plugins=(
   sudo
   dirhistory 
   history
+  nvm
 )
 
 # Clean up and reload zsh config including completion
