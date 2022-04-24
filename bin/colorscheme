@@ -1,0 +1,90 @@
+#!/bin/sh
+
+color=$1
+dotfiles=~/dotfiles
+alacritty_dir=${dotfiles}/alacritty
+alacritty_config=${dotfiles}/.alacritty.yml
+color_name_comment="# current colorscheme: "
+
+function extract_alacritty_color() {
+  local color_name=$1
+  local extracted=$(grep "${color_name}: '" ${alacritty_dir}/${color}.yml | head -n 1 | cut -d "'" -f 2)
+  echo "#${extracted:2}"
+}
+
+# Configure tmux
+function configure_tmux() {
+  local tmux_color_conf=${dotfiles}/.tmux.color.conf
+  local bg_color=$(extract_alacritty_color "background")
+  local fg_color=$(extract_alacritty_color "foreground")
+
+  # Make the border lines unonbtrusive
+  cat > ${tmux_color_conf} <<-EOF
+    set -g pane-border-style "bg=default fg=${bg_color}"
+    set -g pane-active-border-style "bg=default fg=${bg_color}"
+    set -g status-bg "${fg_color}"
+    set -g status-fg "${bg_color}"
+EOF
+  tmux source-file ~/.tmux.conf
+}
+
+function configure() {
+  vim_config=$1
+
+  # Configure alacritty
+  cat ${alacritty_dir}/base.yml > ${alacritty_config}
+  echo "${color_name_comment}${color}" >> ${alacritty_config}
+  cat ${alacritty_dir}/${color}.yml >> ${alacritty_config}
+
+  # Configure vim
+  echo ${vim_config} > ${dotfiles}/.vim/color.vim
+
+  configure_tmux
+}
+
+case $color in
+  dracula)
+    configure 'colorscheme dracula'
+    ;;
+  nord)
+    configure 'colorscheme nord'
+    ;;
+  pink-moon)
+    configure 'colorscheme pink-moon\nlet g:airline_theme="seoul256"'
+    ;;
+  ayu-light)
+    configure 'let ayucolor="light"\ncolorscheme ayu'
+    ;;
+  seoul256)
+    configure 'let g:seoul256_background=235\ncolorscheme seoul256\nlet g:airline_theme="seoul256"'
+    ;;
+  seoul256-light)
+    configure 'let g:seoul256_light_background=255\ncolorscheme seoul256-light\nlet g:airline_theme="seoul256"'
+    ;;
+  firewatch)
+    configure 'set background=dark\ncolorscheme two-firewatch\nlet g:airline_theme="twofirewatch"'
+    ;;
+  firewatch-light)
+    configure 'set background=light\ncolorscheme two-firewatch\nlet g:airline_theme="twofirewatch"'
+    ;;
+  night-owl)
+    configure 'colorscheme night-owl'
+    ;;
+  mountaineer)
+    configure 'colorscheme mountaineer\nlet g:airline_theme="seoul256"'
+    ;;
+  mountaineer-grey)
+    configure 'colorscheme mountaineer-grey\nlet g:airline_theme="seoul256"'
+    ;;
+  mountaineer-light)
+    configure 'colorscheme mountaineer-light\nlet g:airline_theme="seoul256"'
+    ;;
+  papercolor-light)
+    configure 'set background=light\ncolorscheme PaperColor\nlet g:airline_theme="papercolor"'
+    ;;
+  *)
+    grep "${color_name_comment}" ${alacritty_config}
+    echo "Supported colorschemes: dracula, nord, pink-moon, ayu-light, seoul256{,-light}, firewatch{,-light}, night-owl, mountaineer{,-grey,-light}"
+    exit 1
+    ;;
+esac

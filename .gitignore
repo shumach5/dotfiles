@@ -1,0 +1,11 @@
+.vim/.netrwhist
+.vim/spell
+.vim/color.vim
+karabiner/automatic_backups
+.tmux.color.conf
+.vim/autoload/plug.vim
+.vim/plugged/*
+yarn.lock
+node_modules/.yarn-integrity
+.vim/pack/airblade/start/vim-gitgutter
+Brewfile.lock.json

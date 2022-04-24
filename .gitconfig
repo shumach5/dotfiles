@@ -1,0 +1,43 @@
+[user]
+  name = shumach5
+  email = shumach5@gmail.com
+[core]
+  excludesfile = ~/dotfiles/.gitignore_global
+  quotepath = false
+[color]
+  ui = auto
+[color "diff"]
+  commit = green
+  meta = yellow
+  frag = cyan
+  old = red
+  new = green
+  whitespace = red reverse
+[push]
+	default = simple
+[alias]
+  s  = status
+  ci = commit
+  co = checkout
+  cp = cherry-pick
+  b  = branch
+  l  = log
+  lo = log --oneline
+  lp = log --patch
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  a  = add -p
+  pl = pull
+  ps = push
+  d  = diff
+  dc = diff --cached
+  dw = diff --word-diff=color
+  dcw = diff --cached --word-diff=color
+  rd = range-diff
+  g  = grep -n
+[github]
+	user = shumach5
+[diff]
+  compactionHeuristic = true
+[init]
+  defaultBranch = main
