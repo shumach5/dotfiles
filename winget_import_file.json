@@ -1,0 +1,98 @@
+{
+	"$schema": "https://aka.ms/winget-packages.schema.2.0.json",
+	"CreationDate": "2022-04-24T15:51:22.075-00:00",
+	"Sources": [
+		{
+			"Packages": [
+				{
+					"PackageIdentifier": "AgileBits.1Password"
+				},
+				{
+					"PackageIdentifier": "Microsoft.VisualStudio.2022.Community"
+				},
+				{
+					"PackageIdentifier": "7zip.7zip"
+				},
+				{
+					"PackageIdentifier": "Audacity.Audacity"
+				},
+				{
+					"PackageIdentifier": "Canonical.Ubuntu.2004"
+				},
+				{
+					"PackageIdentifier": "CrystalDewWorld.CrystalDiskMark"
+				},
+				{
+					"PackageIdentifier": "Docker.DockerDesktop"
+				},
+				{
+					"PackageIdentifier": "Telerik.Fiddler.Classic"
+				},
+				{
+					"PackageIdentifier": "Git.Git"
+				},
+				{
+					"PackageIdentifier": "Logitech.Options"
+				},
+				{
+					"PackageIdentifier": "Microsoft.WindowsTerminal"
+				},
+				{
+					"PackageIdentifier": "Microsoft.Office"
+				},
+				{
+					"PackageIdentifier": "Microsoft.OneDrive"
+				},
+				{
+					"PackageIdentifier": "Postman.Postman"
+				},
+				{
+					"PackageIdentifier": "Microsoft.Skype"
+				},
+				{
+					"PackageIdentifier": "Microsoft.dotnet"
+				},
+				{
+					"PackageIdentifier": "Logitech.LogiTune"
+				},
+				{
+					"PackageIdentifier": "Google.Chrome"
+				},
+				{
+					"PackageIdentifier": "Microsoft.SQLServerManagementStudio"
+				},
+				{
+					"PackageIdentifier": "Microsoft.Teams"
+				},
+				{
+					"PackageIdentifier": "LINQPad.LINQPad.7"
+				},
+				{
+					"PackageIdentifier": "Microsoft.PowerToys"
+				},
+				{
+					"PackageIdentifier": "FXHOME.HitFilmExpress"
+				},
+				{
+					"PackageIdentifier": "GoLang.Go"
+				},
+				{
+					"PackageIdentifier": "Microsoft.VisualStudioCode"
+				},
+				{
+					"PackageIdentifier": "Grammarly.ForOffice"
+				},
+				{
+					"PackageIdentifier": "Python.Python.3"
+				}
+			],
+			"SourceDetails": {
+				"Argument": "https://winget.azureedge.net/cache",
+				"Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
+				"Name": "winget",
+				"Type": "Microsoft.PreIndexed.Package"
+			}
+		}
+	],
+	"WinGetVersion": "1.2.10271"
+}
