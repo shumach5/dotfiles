@@ -9,3 +9,6 @@ yarn.lock
 node_modules/.yarn-integrity
 .vim/pack/airblade/start/vim-gitgutter
 Brewfile.lock.json
+.oh-my-zsh/plugins/zsh-autosuggestions/
+.vim/pack/
+.oh-my-zsh/themes/
