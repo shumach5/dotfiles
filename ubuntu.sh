@@ -22,3 +22,9 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
 sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
 sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
+
+# Golang
+# https://github.com/golang/go/wiki/Ubuntu
+sudo add-apt-repository ppa:longsleep/golang-backports
+sudo apt update
+sudo apt install golang-go
