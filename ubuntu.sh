@@ -24,7 +24,16 @@ sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
 sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
 
 # Golang
-# https://github.com/golang/go/wiki/Ubuntu
-sudo add-apt-repository ppa:longsleep/golang-backports
-sudo apt update
-sudo apt install golang-go
+sudo apt install golang
+
+# Csharp .NET(6.0)
+# https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu
+# Change the version number(22.04) based on the ubuntu version you are using
+wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+rm packages-microsoft-prod.deb
+
+sudo apt-get update; \
+  sudo apt-get install -y apt-transport-https && \
+  sudo apt-get update && \
+  sudo apt-get install -y dotnet-sdk-6.0
