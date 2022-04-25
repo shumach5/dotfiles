@@ -1,10 +1,9 @@
 # Dotfiles
-
 My personal configurations for Vim, tmux, Git, Winget, etc.  
 
-For Windows: Provides automatic setup for desktop applications. 
-For Linux(Ubuntu): provides rich development environment. 
-For Mac: Provides rich experience for dev environment in addiiton to automatic setup for desktop appliations.
+* For Windows: Provides automatic setup for desktop applications. 
+* For Linux(Ubuntu): provides rich development environment. 
+* For Mac: Provides rich experience for dev environment in addiiton to automatic setup for desktop appliations.
 ## Preparation
 * Windows: N/A (`winget` is installed by default in case of Windows11 or later)
 * Mac: [Homebrew](https://brew.sh/)
