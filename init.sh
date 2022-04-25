@@ -56,6 +56,12 @@ pip3 install --upgrade pip
 pip3 install pylint jedi
 
 # ----------------------
+# Install nvm
+# ----------------------
+# https://github.com/nvm-sh/nvm#installing-and-updating
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
+# ----------------------
 # Set symlink for tmux  
 # ----------------------
 ln -s dotfiles/.tmux.conf .tmux.conf

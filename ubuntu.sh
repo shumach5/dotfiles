@@ -1,5 +1,5 @@
 sudo apt update
-sudo apt install git tmux docker.io net-tools htop apache2-utils zsh
+sudo apt install git tmux docker.io net-tools htop apache2-utils zsh curl
 
 # neovim needs both of python2 and python3.
 sudo apt install python3-pip neovim
@@ -8,11 +8,6 @@ sudo apt install fzf
 
 # perf command
 sudo apt install linux-tools-common
-
-# Node.js
-sudo apt install curl 
-curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-nvm install --lts
 
 # kubectl/Kubectx
 # https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
