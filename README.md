@@ -15,7 +15,7 @@ Clone this repository to your home directory and run the init script.
 
 ```powershell
 cd ~
-git clone https://github.com/shumach5/dotfiles
+git clone git@github.com:shuhei/dotfiles.git
 winget import -i .\dotfiles\winget_import_file.json
 ```  
 

@@ -14,7 +14,7 @@
   new = green
   whitespace = red reverse
 [push]
-	default = simple
+  default = simple
 [alias]
   s  = status
   ci = commit
@@ -36,7 +36,7 @@
   rd = range-diff
   g  = grep -n
 [github]
-	user = shumach5
+  user = shumach5
 [diff]
   compactionHeuristic = true
 [init]
