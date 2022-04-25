@@ -17,6 +17,7 @@ cask "iterm2"
 cask "visual-studio-code"
 cask "skype"
 cask "obs"
+cask "dotnet"
 mas "1Password 7", id: 1333542190
 mas "Monosnap", id: 540348655
 mas "Microsoft Excel", id: 462058435
