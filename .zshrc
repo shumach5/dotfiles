@@ -22,5 +22,3 @@ alias reload_zsh="rm -f ~/.zcompdump* && omz reload"
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# tmux
-alias tm=tmux
