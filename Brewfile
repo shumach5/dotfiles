@@ -19,7 +19,6 @@ cask "skype"
 cask "obs"
 cask "dotnet"
 cask "discord"
-cask "blackhole-16ch"
 mas "1Password 7", id: 1333542190
 mas "Monosnap", id: 540348655
 mas "Microsoft Excel", id: 462058435
