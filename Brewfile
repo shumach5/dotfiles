@@ -12,6 +12,7 @@ brew "neovim"
 brew "python@3.9"
 brew "tmux"
 brew "go"
+brew "jq" # `xcode-select --install` might be needed
 cask "docker"
 cask "iterm2"
 cask "visual-studio-code"
