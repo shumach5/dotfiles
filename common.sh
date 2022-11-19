@@ -63,5 +63,14 @@ export LC_ALL=C.UTF-8
 alias kctx=kubectx
 alias kns=kubens
 
+# fbr - checkout git branch
+# https://github.com/junegunn/fzf/wiki/Examples
+fbr() {
+  local branches branch
+  branches=$(git --no-pager branch -vv) &&
+  branch=$(echo "$branches" | fzf +m) &&
+  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
+
 # ------- Path -------
 export PATH=$HOME/dotfiles/bin:$PATH
