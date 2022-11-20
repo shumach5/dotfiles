@@ -30,6 +30,7 @@ call plug#begin()
 Plug 'ntk148v/vim-horizon'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 " Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
@@ -46,3 +47,13 @@ if system('uname -r') =~ "microsoft"
         autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
         augroup END
 endif
+
+" ---- fzf settings ----
+let $FZF_DEFAULT_OPTS="--layout=reverse"
+let $FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/**'"
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
+
+let mapleader = "\<Space>"
+nnoremap <silent> <leader>f :Files<CR>
+nnoremap <silent> <leader>g :GFiles<CR>
+nnoremap <silent> <leader>h :History<CR>
