@@ -20,7 +20,7 @@
   ci = commit
   co = checkout
   cp = cherry-pick
-  b  = branch
+  br  = branch
   l  = log
   lo = log --oneline
   lp = log --patch
