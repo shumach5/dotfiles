@@ -8,6 +8,7 @@ set hlsearch
 set clipboard=unnamed
 set number
 syntax on
+colorscheme darkblue
 
 " https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
 " Place the following code in your .vimrc before plug#begin() call
@@ -24,7 +25,6 @@ set rtp +=~/.vim
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| PlugInstall --sync | source $MYVIMRC
 \| endif
-
 
 call plug#begin()
 Plug 'ntk148v/vim-horizon'
