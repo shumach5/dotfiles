@@ -8,7 +8,6 @@ set hlsearch
 set clipboard=unnamed
 set number
 syntax on
-colorscheme darkblue
 
 " https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
 " Place the following code in your .vimrc before plug#begin() call
@@ -33,6 +32,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'EdenEast/nightfox.nvim'
 call plug#end()
 
 " ---- NerdTree Settings ----
@@ -57,3 +57,7 @@ let mapleader = "\<Space>"
 nnoremap <silent> <leader>f :Files<CR>
 nnoremap <silent> <leader>g :GFiles<CR>
 nnoremap <silent> <leader>h :History<CR>
+
+" ---- colorscheme settings ----
+" https://github.com/EdenEast/nightfox.nvim
+colorscheme nightfox
