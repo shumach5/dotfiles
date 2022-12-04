@@ -13,6 +13,7 @@ brew "python@3.9"
 brew "tmux"
 brew "go"
 brew "jq" # `xcode-select --install` might be needed
+brew "wget"
 cask "docker"
 cask "iterm2"
 cask "visual-studio-code"

@@ -1,5 +1,5 @@
 sudo apt update
-sudo apt install git tmux docker.io net-tools htop apache2-utils zsh curl
+sudo apt install git tmux docker.io net-tools htop apache2-utils zsh curl wget
 
 # neovim needs both of python2 and python3.
 sudo apt install python3-pip neovim
