@@ -23,6 +23,8 @@ cask "dotnet"
 cask "discord"
 cask "rectangle" 
 cask "audacity"
+cask "microsoft-edge"
+cask "notion"
 mas "1Password 7", id: 1333542190
 mas "Monosnap", id: 540348655
 mas "Microsoft Excel", id: 462058435
