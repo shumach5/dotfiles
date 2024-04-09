@@ -14,6 +14,7 @@ brew "tmux"
 brew "go"
 brew "jq" # `xcode-select --install` might be needed
 brew "wget"
+brew "jnv"
 cask "docker"
 cask "iterm2"
 cask "visual-studio-code"
