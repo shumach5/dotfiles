@@ -17,6 +17,11 @@
           pkgs.git
         ];
 
+      # Ensure nix paths are prioritized in PATH
+      environment.extraInit = ''
+        export PATH="/run/current-system/sw/bin:$PATH"
+      '';
+
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
