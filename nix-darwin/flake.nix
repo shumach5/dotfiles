@@ -28,6 +28,9 @@
       # Enable alternative shell support in nix-darwin.
       # programs.fish.enable = true;
 
+      # Enable zsh
+      programs.zsh.enable = true;
+
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
 
@@ -44,7 +47,7 @@
   in
   {
     # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#shuheis-MacBook-Pro
+    # $ darwin-rebuild switch --flake ~/dotfiles/nix-darwin#jinarashi
     darwinConfigurations."jinarashi" = nix-darwin.lib.darwinSystem {
       modules = [ configuration ];
     };
