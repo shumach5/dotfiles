@@ -26,9 +26,10 @@
       programs.zsh.enable = true;
 
       # Enable home-manager
-      home-manager.useGlobalPkgs = true;
-      home-manager.useUserPackages = true;
-      home-manager.users.shuheieda = import ./home.nix;
+      
+      # home-manager.useGlobalPkgs = true;
+      # home-manager.useUserPackages = true;
+      # home-manager.users.shuheieda = import ./home.nix;
 
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
