@@ -12,6 +12,7 @@
   home.packages = with pkgs; [
     bat
     htop
+    slack
   ];
 
   # Set the Home Manager state version. Adjust this value according to your Home Manager version.
