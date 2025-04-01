@@ -2,54 +2,71 @@
   description = "Example nix-darwin system flake";
 
   inputs = {
+    # Specify the nixpkgs input using the unstable channel.
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    
+    # Specify the nix-darwin repository.
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
+    # Ensure nix-darwin uses the same nixpkgs input.
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    
+    # Specify the home-manager repository.
     home-manager.url = "github:nix-community/home-manager";
+    # Ensure home-manager uses the same nixpkgs input.
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
   let
+    # Define the base system configuration.
     configuration = { pkgs, ... }: {
-      # List packages installed in system profile. To search by name, run:
-      # $ nix-env -qaP | grep wget
-      environment.systemPackages =
-        [ pkgs.vim
-          pkgs.git
-        ];
+      
+      # List of packages to install system-wide.
+      environment.systemPackages = [
+        pkgs.vim
+        pkgs.git
+      ];
 
-      # Necessary for using flakes on this system.
+      # Enable experimental features needed for flakes.
       nix.settings.experimental-features = "nix-command flakes";
 
-      # Enable zsh
+      # Enable zsh as the default shell for the system.
       programs.zsh.enable = true;
 
-      # Enable home-manager
-      
-      # home-manager.useGlobalPkgs = true;
-      # home-manager.useUserPackages = true;
-      # home-manager.users.shuheieda = import ./home.nix;
+      # ------------------------------
+      # Home Manager Integration Settings
+      # ------------------------------
+      # Allow Home Manager to manage global packages.
+      home-manager.useGlobalPkgs = true;
+      # Allow Home Manager to manage user-specific packages.
+      home-manager.useUserPackages = true;
+      # Import the Home Manager configuration from the home.nix file.
+      home-manager.users.shuheieda = import ./home.nix;
+      # ------------------------------
 
-      # Set Git commit hash for darwin-version.
+      # Set the Git commit hash for the darwin configuration revision.
       system.configurationRevision = self.rev or self.dirtyRev or null;
 
-      # Used for backwards compatibility, please read the changelog before changing.
-      # $ darwin-rebuild changelog
+      # Define the system state version (used for backwards compatibility).
       system.stateVersion = 6;
 
-      # The platform the configuration will be used on.
+      # Specify the host platform; here it is set to aarch64-darwin.
       nixpkgs.hostPlatform = "aarch64-darwin";
 
-      # Allow unfree packages
+      # Allow the installation of unfree packages.
       nixpkgs.config.allowUnfree = true;
     };
   in
   {
-    # Build darwin flake using:
-    # $ darwin-rebuild switch --flake ~/dotfiles/nix-darwin#jinarashi
+    # Define the darwin configuration for the host.
+    # Change "jinarashi" to your actual hostname.
     darwinConfigurations."jinarashi" = nix-darwin.lib.darwinSystem {
-      modules = [ configuration ];
+      modules = [
+        # Apply the base system configuration.
+        configuration
+        # Integrate Home Manager with nix-darwin.
+        home-manager.darwinModules.home-manager
+      ];
     };
   };
 }
