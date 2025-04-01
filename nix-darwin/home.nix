@@ -3,8 +3,7 @@
 {
   # Specify the macOS username.
   home.username = "shuheieda";
-  # Specify the home directory for the user.
-  #home.homeDirectory = "/Users/shuheieda";
+  home.homeDirectory = "/Users/shuheieda";
 
   # Enable zsh as the user's shell.
   programs.zsh.enable = true;
