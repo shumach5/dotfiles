@@ -59,6 +59,9 @@
 
       # Allow the installation of unfree packages.
       nixpkgs.config.allowUnfree = true;
+
+      # Set your machine name explicitly
+      networking.hostName = "MacBook-Pro";
     };
   in
   {
