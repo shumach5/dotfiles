@@ -26,7 +26,7 @@
       
       # Kubernetes shortcuts
       kctx = "kubectx";
-      kns = "kuben";
+      kns = "kubens";
     };
   };
 
