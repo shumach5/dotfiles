@@ -18,11 +18,14 @@
   };
 
   # Enable zsh as the user's shell.
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    autosuggestion.enable = true;
+  };
 
   programs.zsh.oh-my-zsh = {
     enable = true;
-    plugins = [ ];
+    plugins = [ "z" ];
     theme = "agnoster";
   };
 
