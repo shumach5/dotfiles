@@ -98,6 +98,7 @@
         ];
         masApps = {
           "Monosnap" = 540348655;
+          "Tailscale" = 1470499037;
         };
       };
     };
