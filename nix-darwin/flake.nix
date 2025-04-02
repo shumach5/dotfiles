@@ -18,6 +18,10 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
   let
+    # Define common variables
+    username = "shuheieda";
+    homeDirectory = "/Users/${username}";
+
     # Define the base system configuration.
     configuration = { pkgs, ... }: {
       
@@ -31,9 +35,9 @@
       nix.settings.experimental-features = "nix-command flakes";
 
       # Define system users
-      users.users.shuheieda = {
-        name = "shuheieda";
-        home = "/Users/shuheieda";
+      users.users.${username} = {
+        name = username;
+        home = homeDirectory;
         shell = pkgs.zsh;
       };
 
@@ -45,7 +49,7 @@
       # Allow Home Manager to manage user-specific packages.
       home-manager.useUserPackages = true;
       # Import the Home Manager configuration from the home.nix file.
-      home-manager.users.shuheieda = import ./home.nix;
+      home-manager.users.${username} = { config, pkgs, ... }: import ./home.nix { inherit config pkgs username homeDirectory; };
       # ------------------------------
 
       # Set the Git commit hash for the darwin configuration revision.

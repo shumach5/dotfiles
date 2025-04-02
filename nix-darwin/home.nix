@@ -1,9 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, username, homeDirectory, ... }:
 
 {
   # Specify the macOS username.
-  home.username = "shuheieda";
-  home.homeDirectory = "/Users/shuheieda";
+  home.username = username;
+  home.homeDirectory = homeDirectory;
   # Set the Home Manager state version. Adjust this value according to your Home Manager version.
   home.stateVersion = "23.11";
   
