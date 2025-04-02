@@ -20,11 +20,19 @@
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
+    shellAliases = {
+      # Directory navigation
+      ".." = "cd .."; 
+      
+      # Kubernetes shortcuts
+      kctx = "kubectx";
+      kns = "kuben";
+    };
   };
 
   programs.zsh.oh-my-zsh = {
     enable = true;
-    plugins = [ "z" "git" "kubectl" "kubectx"];
+    plugins = [ "z" "git" "kubectl" "kubectx" "sudo" "dirhistory"];
     theme = "agnoster";
   };
 }
