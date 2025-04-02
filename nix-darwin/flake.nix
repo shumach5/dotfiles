@@ -62,6 +62,8 @@
 
       # Set your machine name explicitly
       networking.hostName = "MacBook-Pro";
+      
+      ids.gids.nixbld = 350;
 
       # Homebrew configuration
       homebrew = {
@@ -76,23 +78,14 @@
         };
         brews = [
           "docker-compose"
-          "fzf"
-          "kubectx"
-          "kubectl"
           "mas"
-          "neovim"
-          "python@3.9"
-          "tmux"
-          "go"
-          "jq"
-          "wget"
         ];
         casks = [
           "docker"
+          "dotnet"
           "iterm2"
           "visual-studio-code"
           "obs"
-          "discord"
           "audacity"
           "notion"
           "raycast"

@@ -11,8 +11,16 @@
   home.packages = with pkgs; [
     htop
     slack
+    discord
     cowsay
     oh-my-zsh
+    fzf
+    kubectx
+    kubectl
+    jq
+    wget
+    neovim
+    python3Full
   ];
 
   # Enable zsh as the user's shell.
