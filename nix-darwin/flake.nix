@@ -62,11 +62,30 @@
 
       # Set your machine name explicitly
       networking.hostName = "MacBook-Pro";
+
+      # Homebrew configuration
+      homebrew = {
+        enable = true;
+        onActivation = {
+          autoUpdate = true;
+          cleanup = "none";
+        };
+        global = {
+          brewfile = true;
+          lockfiles = false;
+        };
+        brews = [
+          "gh"   # GitHub CLI
+          "mas"  # Mac App Store CLI
+        ];
+        casks = [
+          "visual-studio-code" # VS Code
+        ];
+      };
     };
   in
   {
     # Define the darwin configuration for the host.
-    # Change "jinarashi" to your actual hostname.
     darwinConfigurations."jinarashi" = nix-darwin.lib.darwinSystem {
       modules = [
         # Apply the base system configuration.

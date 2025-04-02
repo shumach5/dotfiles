@@ -9,7 +9,6 @@
   
   # Define user-specific packages to be installed.
   home.packages = with pkgs; [
-    bat
     htop
     slack
     cowsay
