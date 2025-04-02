@@ -30,9 +30,6 @@
       # Enable experimental features needed for flakes.
       nix.settings.experimental-features = "nix-command flakes";
 
-      # Enable zsh as the default shell for the system.
-      programs.zsh.enable = true;
-
       # Define system users
       users.users.shuheieda = {
         name = "shuheieda";
