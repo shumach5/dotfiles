@@ -75,12 +75,43 @@
           lockfiles = false;
         };
         brews = [
-          "gh"   # GitHub CLI
-          "mas"  # Mac App Store CLI
+          "docker-compose"
+          "fzf"
+          "git"
+          "htop"
+          "kubectx"
+          "kubectl"
+          "mas"
+          "neovim"
+          "python@3.9"
+          "tmux"
+          "go"
+          "jq"
+          "wget"
+          "jnv"
         ];
         casks = [
-          "visual-studio-code" # VS Code
+          "docker"
+          "iterm2"
+          "visual-studio-code"
+          "obs"
+          "discord"
+          "rectangle"
+          "audacity"
+          "notion"
+          "raycast"
+          "cursor"
+          "1password"
+          "1password-cli"
+          "microsoft-edge"
+          "microsoft-excel"
+          "microsoft-word"
+          "microsoft-powerpoint"
+          "microsoft-onenote"
         ];
+        masApps = {
+          "Monosnap" = 540348655;
+        };
       };
     };
   in
