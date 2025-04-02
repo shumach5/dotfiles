@@ -52,7 +52,7 @@
       system.configurationRevision = self.rev or self.dirtyRev or null;
 
       # Define the system state version (used for backwards compatibility).
-      system.stateVersion = 6;
+      system.stateVersion = 4;
 
       # Specify the host platform; here it is set to aarch64-darwin.
       nixpkgs.hostPlatform = "aarch64-darwin";
@@ -68,7 +68,7 @@
         enable = true;
         onActivation = {
           autoUpdate = true;
-          cleanup = "none";
+          cleanup = "zap";
         };
         global = {
           brewfile = true;
@@ -77,8 +77,6 @@
         brews = [
           "docker-compose"
           "fzf"
-          "git"
-          "htop"
           "kubectx"
           "kubectl"
           "mas"
@@ -88,7 +86,6 @@
           "go"
           "jq"
           "wget"
-          "jnv"
         ];
         casks = [
           "docker"
@@ -96,14 +93,11 @@
           "visual-studio-code"
           "obs"
           "discord"
-          "rectangle"
           "audacity"
           "notion"
           "raycast"
           "cursor"
           "1password"
-          "1password-cli"
-          "microsoft-edge"
           "microsoft-excel"
           "microsoft-word"
           "microsoft-powerpoint"
