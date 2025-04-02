@@ -4,6 +4,9 @@
   # Specify the macOS username.
   home.username = "shuheieda";
   home.homeDirectory = "/Users/shuheieda";
+  # Set the Home Manager state version. Adjust this value according to your Home Manager version.
+  home.stateVersion = "23.11";
+  
   # Define user-specific packages to be installed.
   home.packages = with pkgs; [
     bat
@@ -13,10 +16,6 @@
     oh-my-zsh
   ];
 
-  home.file = {
-    #".zshrc".source = config.lib.file.mkOutOfStoreSymlink "/Users/shuheieda/dotfiles/.zshrc";
-  };
-
   # Enable zsh as the user's shell.
   programs.zsh = {
     enable = true;
@@ -25,13 +24,7 @@
 
   programs.zsh.oh-my-zsh = {
     enable = true;
-    plugins = [ "z" ];
+    plugins = [ "z" "git" "kubectl" "kubectx"];
     theme = "agnoster";
   };
-
-  # Set the Home Manager state version. Adjust this value according to your Home Manager version.
-  home.stateVersion = "23.11";
-
-  # Create symlink to custom .zshrc
-  # home.file.".zshrc".source = config.lib.file.mkOutOfStoreSymlink "/Users/shuheieda/dotfiles/.zshrc";
 }
