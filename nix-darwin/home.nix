@@ -34,6 +34,8 @@
       # Kubernetes shortcuts
       kctx = "kubectx";
       kns = "kubens";
+
+      python = "python3";
     };
     initExtra = ''
       # integrate fzf with z command
