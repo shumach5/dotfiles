@@ -8,7 +8,7 @@
   home.stateVersion = "23.11";
   
   # Import Git configuration
-  imports = [ ./git.nix ];
+  imports = [ ./home-manager/git.nix ];
   
   # Define user-specific packages to be installed.
   home.packages = with pkgs; [
