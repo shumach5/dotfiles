@@ -7,6 +7,9 @@
   # Set the Home Manager state version. Adjust this value according to your Home Manager version.
   home.stateVersion = "23.11";
   
+  # Import Git configuration
+  imports = [ ./git.nix ];
+  
   # Define user-specific packages to be installed.
   home.packages = with pkgs; [
     htop
