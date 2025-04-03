@@ -35,6 +35,25 @@
       kctx = "kubectx";
       kns = "kubens";
     };
+    initExtra = ''
+      # integrate fzf with z command
+      # https://github.com/junegunn/fzf/wiki/Examples#integration-with-z
+      # https://github.com/ohmyzsh/ohmyzsh/issues/11282 (Replacing _z with zshz is needed)
+      unalias z 2> /dev/null
+      z() {
+        [ $# -gt 0 ] && zshz "$*" && return
+        cd "$(zshz -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "''\${*##-*}'" | sed 's/^[0-9,.]* *//')"
+      }
+
+      # fbr - checkout git branch
+      # https://github.com/junegunn/fzf/wiki/Examples
+      fbr() {
+        local branches branch
+        branches=$(git --no-pager branch -vv) &&
+        branch=$(echo "$branches" | fzf +m) &&
+        git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+      }
+    '';
   };
 
   programs.zsh.oh-my-zsh = {
