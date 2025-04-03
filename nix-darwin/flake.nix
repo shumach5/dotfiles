@@ -28,7 +28,6 @@
       # List of packages to install system-wide.
       environment.systemPackages = [
         pkgs.vim
-        pkgs.git
       ];
 
       # Enable experimental features needed for flakes.

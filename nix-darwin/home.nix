@@ -12,6 +12,7 @@
   
   # Define user-specific packages to be installed.
   home.packages = with pkgs; [
+    git
     htop
     slack
     discord
