@@ -15,7 +15,6 @@
     git
     htop
     slack
-    discord
     cowsay
     oh-my-zsh
     fzf

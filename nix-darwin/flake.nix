@@ -94,6 +94,7 @@
           "raycast"
           "cursor"
           "1password"
+          "discord"
           "microsoft-excel"
           "microsoft-word"
           "microsoft-powerpoint"
@@ -101,7 +102,7 @@
         ];
         masApps = {
           "Monosnap" = 540348655;
-          "Tailscale" = 1470499037;
+          "Tailscale" = 1475387142;
         };
       };
     };
