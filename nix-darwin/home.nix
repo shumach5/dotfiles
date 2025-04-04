@@ -39,6 +39,8 @@
       kns = "kubens";
 
       python = "python3";
+
+      vim = "nvim";
     };
     initExtra = ''
       # integrate fzf with z command
