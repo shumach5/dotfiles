@@ -1,5 +1,5 @@
 {
-  description = "Example nix-darwin system flake";
+  description = "nix-darwin system flake";
 
   inputs = {
     # Specify the nixpkgs input using the unstable channel.
@@ -99,6 +99,7 @@
           "microsoft-word"
           "microsoft-powerpoint"
           "microsoft-onenote"
+          "microsoft-teams"
         ];
         masApps = {
           "Monosnap" = 540348655;
