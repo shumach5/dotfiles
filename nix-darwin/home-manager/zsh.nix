@@ -40,6 +40,10 @@
 
       # source fzf-tab
       source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
+
+      # fzf key bindings for command history search
+      source ${pkgs.fzf}/share/fzf/key-bindings.zsh
+      source ${pkgs.fzf}/share/fzf/completion.zsh
     '';
     oh-my-zsh = {
       enable = true;
