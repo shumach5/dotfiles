@@ -68,11 +68,10 @@
       # source fzf-tab
       source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
     '';
-  };
-
-  programs.zsh.oh-my-zsh = {
-    enable = true;
-    plugins = [ "z" "git" "kubectl" "kubectx" "sudo" "dirhistory"];
-    theme = "agnoster";
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "z" "git" "kubectl" "kubectx" "sudo" "dirhistory"];
+      theme = "agnoster";
+    };
   };
 }
