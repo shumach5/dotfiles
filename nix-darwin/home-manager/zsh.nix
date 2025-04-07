@@ -42,13 +42,19 @@
       source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
 
       # fzf key bindings for command history search
-      source ${pkgs.fzf}/share/fzf/key-bindings.zsh
-      source ${pkgs.fzf}/share/fzf/completion.zsh
+      source <(fzf --zsh)
+
+      # Enable Starship theme
+      eval "$(starship init zsh)"
     '';
     oh-my-zsh = {
       enable = true;
       plugins = [ "z" "git" "kubectl" "kubectx" "sudo" "dirhistory"];
-      theme = "agnoster";
+    };
+  };
+  programs.starship = {
+    settings = {
+      add_newline = true;
     };
   };
 } 

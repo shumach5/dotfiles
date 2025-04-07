@@ -28,5 +28,6 @@
     neovim
     python3Full
     zsh-fzf-tab
+    starship
   ];
 }
