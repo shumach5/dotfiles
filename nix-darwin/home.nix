@@ -24,6 +24,7 @@
     wget
     neovim
     python3Full
+    zsh-fzf-tab
   ];
 
   # Enable zsh as the user's shell.
@@ -41,6 +42,9 @@
       python = "python3";
 
       vim = "nvim";
+
+      # Nix shortcuts
+      switch = "darwin-rebuild switch --flake ~/dotfiles/nix-darwin#jinarashi";
     };
     initExtra = ''
       # integrate fzf with z command
@@ -60,6 +64,9 @@
         branch=$(echo "$branches" | fzf +m) &&
         git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
       }
+
+      # source fzf-tab
+      source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
     '';
   };
 

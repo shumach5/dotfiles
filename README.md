@@ -6,7 +6,6 @@ My personal configurations for Vim, tmux, Git, Winget, etc.
 * For Mac: Provides rich experience for dev environment in addiiton to automatic setup for desktop appliations.
 ## Preparation
 * Windows: N/A (`winget` is installed by default in case of Windows11 or later)
-* Mac: [Homebrew](https://brew.sh/)
 * Linux(Ubuntu): N/A
 
 ## Installation (For Windows)
@@ -22,7 +21,17 @@ winget import -i .\dotfiles\winget_import_file.json
 * If you would like to update the software installed by winget, run `winget upgrade --all` [source](https://docs.microsoft.com/en-us/windows/package-manager/winget/upgrade)
 * `winget list` shows the list of applications managed by winget
 
-## Installations (For Linux and Mac)
+## Installations (Mac)
+1. Install [nix](https://github.com/nix-darwin/nix-darwin?tab=readme-ov-file#prerequisites)
+  1-1. Make sure to install one from `Nix installer from Determinate Systems`
+1. Clone this repo with `git clone https://github.com/shumach5/dotfiles#`
+1. Install [nix-darwin] with the following command
+``` shell
+nix run nix-darwin/master#darwin-rebuild --extra-experimental-features "nix-command flakes" -- switch --flake ~/dotfiles/nix-darwin#jinarashi`
+```
+1. When you update your code you could run `switch` or `darwin-rebuild switch --flake ~/dotfiles/nix-darwin#jinarashi` 
+
+## Installations (For Linux)
 1. Clone the repo and run `init.sh` by the following command.
 ```shell
 cd ~
