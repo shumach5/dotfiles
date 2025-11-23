@@ -101,10 +101,12 @@
           "microsoft-onenote"
           "microsoft-teams"
         ];
-        masApps = {
-          "Monosnap" = 540348655;
-          "Tailscale" = 1475387142;
-        };
+        # masApps = {
+        #   "Monosnap" = 540348655;
+        #   "Tailscale" = 1475387142;
+        # };
+        # Note: masApps disabled due to mas authentication issues on newer macOS versions
+        # Install these apps manually from the Mac App Store if needed
       };
     };
   in
