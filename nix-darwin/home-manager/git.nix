@@ -54,6 +54,11 @@
       dcw = "diff --cached --word-diff=color";
       rd = "range-diff";
       g = "grep -n";
+      wt = "worktree";
+      wta = "worktree add";
+      wtl = "worktree list";
+      wtr = "worktree remove";
+      clean = "clean -fd";
     };
   };
 
