@@ -25,11 +25,11 @@ winget import -i .\dotfiles\winget_import_file.json
 1. Install [nix](https://github.com/nix-darwin/nix-darwin?tab=readme-ov-file#prerequisites)
   1-1. Make sure to install one from `Nix installer from Determinate Systems`
 1. Clone this repo with `git clone https://github.com/shumach5/dotfiles#`
-1. Install [nix-darwin] with the following command
+1. Install [nix-darwin] with the following command (note: `sudo` is required)
 ``` shell
 nix run nix-darwin/master#darwin-rebuild --extra-experimental-features "nix-command flakes" -- switch --flake ~/dotfiles/nix-darwin#jinarashi`
 ```
-1. When you update your code you could run `switch` or `darwin-rebuild switch --flake ~/dotfiles/nix-darwin#jinarashi` 
+1. When you update your code you could run `switch` or `sudo darwin-rebuild switch --flake ~/dotfiles/nix-darwin#jinarashi` (note: `sudo` is required) 
 
 ## Installations (For Linux)
 1. Clone the repo and run `init.sh` by the following command.
